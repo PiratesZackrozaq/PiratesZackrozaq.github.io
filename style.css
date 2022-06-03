@@ -1,51 +1,608 @@
-.bg_image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-h1.title .slide.designer-portfolio.slider-style-3 .inner h1.title {
-  font-size: 53px;
-  line-height: 70px;
-}
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+:root {
+    scroll-behavior: auto;
   }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
+* {
+	box-sizing: border-box;
+  }
+  .position-relative {
+	position: relative !important;
+  }
+  .my_switcher {
+	position: fixed;
+	left: 30px;
+	transform: rotate(90deg);
+	z-index: 99;
+	bottom: 30px;
+  }
+  .my_switcher ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    line-height: 40px;
+  }
+  .my_switcher ul li a.light {
+    color: #ffffff;
+  }
+  .my_switcher ul li a.active {
+    display: none;
+  }
+  .my_switcher ul li a {
+    position: relative;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.4s;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .my_switcher ul li a img {
+    width: 15px;
+  }
+  img {
+    max-width: 100%;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  .my_switcher ul li a span {
+    transform: rotate(-180deg);
+    display: none;
+  }
+  .my_switcher ul li a.dark {
+    color: #18191A;
+  }
+  .my_switcher ul li a {
+    position: relative;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .my_switcher ul li a img {
+    width: 15px;
+  }
+  img {
+    max-width: 100%;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  .my_switcher ul li a span {
+    transform: rotate(-180deg);
+    display: none;
+  }
+  .header-area.header--sticky {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+  }
+  .header-area.header--transparent {
+    left: 0;
+    right: 0;
+  }
+  article, aside, details, figcaption, figure, footer, header, nav, section, summary {
+    display: block;
+  }
+  .header-area.header--sticky .header-wrapper {
+    padding: 20px 0;
     transition: 0.3s;
   }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
+  .header-area .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #ccc;
+  a {
+    transition: all 0.4s ease-in-out 0s;
   }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+  a {
+    color: #ca3c08;
+    text-decoration: none;
   }
-body {
-    min-height: 2000px;
+  img {
+    max-width: 100%;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  .header-area.header--sticky .header-wrapper .logo a img {
+    transition: 0.5s;
+  }
+  .ml--50 {
+    margin-left: 50px !important;
+  }
+  .d-lg-block {
+    display: block !important;
+  }
+  .blog-single-page-title ul.blog-meta, ul.list-style, .list-style--1, ul.nav.tab-style--1, ul.brand-style, .rn-pagination ul.page-list, .breadcrumb-inner .page-list, .color-black .mainmenunav ul.mainmenu, .color-white .mainmenunav ul.mainmenu, .mainmenunav ul.mainmenu > li > ul.submenu, .mainmenunav ul.mainmenu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .mainmenunav ul.mainmenu {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .header-area .header-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  ul.social-share {
+    padding: 0;
+    margin: -6px;
+  }
+  .liststyle {
+    list-style: none;
+  }
+  .justify-content-start {
+    -webkit-box-pack: start !important;
+    justify-content: flex-start !important;
+  }
+  .header-area .header-right .header-btn {
+    margin-left: 50px;
+  }
+  .header-area.color-black a.rn-btn {
+    border: 2px solid rgba(29, 29, 36, 0.5);
+    color: #1d1d24;
+  }
+  .header-area .header-wrapper a.rn-btn {
+    padding: 0 25px;
+    height: 46px;
+    display: inline-block;
+    line-height: 42px;
+    border-radius: 6px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  a.rn-btn, button.rn-btn, .rn-btn {
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+  }
+  .pl--20 {
+    padding-left: 20px !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+  .color-black .humberger-menu span.text-white {
+    color: #000000 !important;
+  }
+  .humberger-menu span {
+    cursor: pointer;
+  }
+  .humberger-menu span svg {
+    width: 30px;
+    height: 30px;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  img, svg {
+    vertical-align: middle;
+  }
+  .slider-paralax, .rn-paralax {
+	height: auto;
+	padding-top: 150px;
+	padding-bottom: 150px;
+  }
+  .personal-portfolio-slider {
+	position: relative;
+  }
+  .bg_image--25 {
+	background-image: url(https://github.com/PiratesZackrozaq/PiratesZackrozaq.github.io/blob/Bootstrap1/img/carousel-1.jpg?raw=true);
+    }
+  .bg_image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+  }
+  .align-items-center {
+	-webkit-box-align: center !important;
+	align-items: center !important;
+  }
+  .justify-content-center {
+	-webkit-box-pack: center !important;
+	justify-content: center !important;
+  }
+  .d-flex {
+	display: flex !important;
+  }
+  .container {
+	max-width: 1260px;
+  }
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+  }
+  .row > [class*="col"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-lg-12 {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .row > * {
+    max-width: 100%;
+    margin-top: var(--bs-gutter-y);
+  }
+
+  .slide .inner {
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+  }
+  .text-start {
+    text-align: left !important;
+  }
+  .slide.slider-style-3 .inner > span {
+    color: #1f1f25;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .slide.slider-style-3 .inner h1.title {
+    color: #1f1f25;
+    font-size: 75px;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+    line-height: 90px;
+    text-transform: inherit;
+    width: 70%;
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, address, p, pre, blockquote, dl, dd, menu, ol, ul, table, caption, hr {
+    margin: 0;
+    margin-bottom: 0px;
+    margin-bottom: 15px;
+  }
+  .slide.slider-style-3 .inner h1.title span {
+    color: #f9004d;
+  }
+  .rn-section-gap {
+    padding: 120px 0;
+  }
+  .bg_color--1 {
+    background: #fff;
+  }
+  .row--35 {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+  .row--35 > [class*="col"], .row--35 > [class*="col-"] {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .col-lg-5 {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .row > * {
+    max-width: 100%;
+    margin-top: var(--bs-gutter-y);
+  }
+  .about-wrapper .thumbnail {
+    position: relative;
+    z-index: 2;
+  }
+  .about-wrapper .thumbnail img {
+    border-radius: 8px;
+  }
+  .thumbnail img {
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.1);
+  }
+  .w-100 {
+    width: 100% !important;
+  }
+  img {
+    max-width: 100%;
+  }
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+  .row--35 > [class*="col"], .row--35 > [class*="col-"] {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .col-lg-7 {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .pt--100 {
+    padding-top: 100px !important;
+  }
+  .section-title {
+    margin-top: -20px;
+  }
+  .about-inner .section-title h2.title {
+    margin-bottom: 8px;
+  }
+  .section-title h2.title {
+    font-size: 60px;
+  }
+  .rn-section-gap {
+    padding: 120px 0;
+  }
+  .bg_color--5 {
+    background: #f8f9fc;
+  }
+  .section-title {
+    margin-top: -20px;
+  }
+  .mb--20 {
+    margin-bottom: 20px !important;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .section-title h2.title {
+    font-size: 60px;
+    margin-bottom: 8px;
+  }
+  h1, .h1, h2, .h2, h3, .h3 {
+    font-weight: 700;
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.4074;
+    color: #1f1f25;
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, address, p, pre, blockquote, dl, dd, menu, ol, ul, table, caption, hr {
+    margin: 0;
+  }
+  .about-inner .section-title p.description {
+    font-weight: 300;
+    color: #717173;
+    padding: 0;
+  }
+  .section-title p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .about-inner .section-title p.description a {
+    color: rgb(29, 29, 36);
+  }
+  .section-title p a {
+    font-weight: 500;
+  }
+  a {
+    transition: all 0.4s ease-in-out 0s;
+  }
+  a {
+    text-decoration: none;
+  }
+  .mt--30 {
+    margin-top: 30px !important;
+  }
+  ul.nav.tab-style--1 {
+    display: flex;
+    margin: 0 -20px;
+    flex-wrap: wrap;
+    border: 0 none;
+  }
+  .blog-single-page-title ul.blog-meta, ul.list-style, .list-style--1, ul.nav.tab-style--1, ul.brand-style, .rn-pagination ul.page-list, .breadcrumb-inner .page-list, .color-black .mainmenunav ul.mainmenu, .color-white .mainmenunav ul.mainmenu, .mainmenunav ul.mainmenu > li > ul.submenu, .mainmenunav ul.mainmenu {
+    padding: 0;
+    list-style: none;
+  }
+  ul.nav.tab-style--1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+  ul.nav.tab-style--1 li a.active::before {
+    width: 100%;
+    background: currentColor;
+  }
+  ul.nav.tab-style--1 li a::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0;
+  }
+  ul.nav.tab-style--1 li a.active {
+    background: transparent;
+    color: #f9004d;
+  }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border-color: #dee2e6 #dee2e6 #fff;
+  }
+  ul.nav.tab-style--1 li a {
+    border: 0 none;
+      border-top-color: currentcolor;
+      border-right-color: currentcolor;
+      border-bottom-color: currentcolor;
+      border-left-color: currentcolor;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0;
+      padding-bottom: 0px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+  }
+  .pv-tab-button li span::after, .pv-tab-button button span::after, .single-demo a, .related-work .inner h4 a, .blog.blog-style--1 .content .blog-btn, .blog.blog-style--1 .content h4.title a, .blog.blog-style--1 .content::before, .blog.blog-style--1 .content, .blog.blog-style--1 .thumbnail a::after, .blog.blog-style--1 .thumbnail a img, .blog.blog-style--1, .rn-pricing .pricing-table-inner .pricing-footer a.rn-btn, input, textarea, .rn-address .inner p a, .rn-address .icon, ul.nav.tab-style--1 li a::before, ul.nav.tab-style--1 li a, .team .thumbnail::after, .team .thumbnail img, .standard-service .content h3 a, .single-service.service__style--4 .content p, .single-service.service__style--4 .content h3.title, .single-service.service__style--4 .icon, .single-service.service__style--4::before, .single-service.service__style--4, .single-service.service__style--3, .single-service.service__style--2 a::before, .single-service.service__style--2 .content p, .single-service.service__style--2 .content h3.title, .single-service.service__style--2 .icon, .single-service.service__style--2 a, .single-service.service__style--1 .content p, .single-service.service__style--1 .content h3.title, .single-service.service__style--1 .icon, .single-service.service__style--1, .portfolio-style--3 .content .portfolio-btn, .portfolio-style--3 .content h4.title a, .portfolio-style--3 .content::before, .portfolio-style--3 .content, .portfolio-style--3 .thumbnail a::after, .portfolio-style--3 .thumbnail a img, .portfolio-style--3, .portfolio-sacousel-inner .slick-dots li button::after, .rn-slick-dot .slick-dots li button::after, .portfolio-tilthover .portfolio .content, .portfolio-tilthover .portfolio .bg-blr-image, .portfolio .content .inner .portfolio-button, .portfolio .bg-blr-image, .portfolio .thumbnail::after, .portfolio .thumbnail-inner::before, .portfolio, .footer-default .footer-right .footer-widget ul.ft-link li a, ul.social-share li a, .rn-pagination ul.page-list li a::before, a.rn-btn, button.rn-btn, .rn-btn, a.btn-transparent::after, a.btn-transparent, .mainmenunav ul.mainmenu > li > ul.submenu li a, .mainmenunav ul.mainmenu > li > ul.submenu, .mainmenunav ul.mainmenu > li > a, .header-area .header-wrapper a.rn-btn {
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .nav-tabs .nav-link {
+    margin-bottom: -1px;
+  }
+  .nav-link {
+    text-decoration: none;
+   }
+   ul.nav.tab-style--1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+  ul.nav.tab-style--1 li a::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 2px;
+    bottom: 0;
+  }
+  ul.nav.tab-style--1 li a {
+    border: 0 none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0;
+      padding-bottom: 0px;
+    background: transparent;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    color: #1d1d24;
+  }
+  ul.nav.tab-style--1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+  .mt--40 {
+    margin-top: 40px !important;
+  }
+  .col-lg-4 {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .single-service.service__style--2.bg-color-gray, .single-service.service__style--2.bg-color-white {
+    margin-top: 0;
+  }
+  .single-service.service__style--3, .single-service.service__style--2, .single-service.service__style--1 {
+    position: relative;
+  }
+  .single-service.service__style--2.bg-color-gray a, .single-service.service__style--2.bg-color-white a {
+    display: flex;
+    height: 100%;
+    background: #f6f6f6;
+    position: relative;
+  }
+  .single-service.service__style--2 a {
+    padding: 60px 45px;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .pv-tab-button li span::after, .pv-tab-button button span::after, .single-demo a, .related-work .inner h4 a, .blog.blog-style--1 .content .blog-btn, .blog.blog-style--1 .content h4.title a, .blog.blog-style--1 .content::before, .blog.blog-style--1 .content, .blog.blog-style--1 .thumbnail a::after, .blog.blog-style--1 .thumbnail a img, .blog.blog-style--1, .rn-pricing .pricing-table-inner .pricing-footer a.rn-btn, input, textarea, .rn-address .inner p a, .rn-address .icon, ul.nav.tab-style--1 li a::before, ul.nav.tab-style--1 li a, .team .thumbnail::after, .team .thumbnail img, .standard-service .content h3 a, .single-service.service__style--4 .content p, .single-service.service__style--4 .content h3.title, .single-service.service__style--4 .icon, .single-service.service__style--4::before, .single-service.service__style--4, .single-service.service__style--3, .single-service.service__style--2 a::before, .single-service.service__style--2 .content p, .single-service.service__style--2 .content h3.title, .single-service.service__style--2 .icon, .single-service.service__style--2 a, .single-service.service__style--1 .content p, .single-service.service__style--1 .content h3.title, .single-service.service__style--1 .icon, .single-service.service__style--1, .portfolio-style--3 .content .portfolio-btn, .portfolio-style--3 .content h4.title a, .portfolio-style--3 .content::before, .portfolio-style--3 .content, .portfolio-style--3 .thumbnail a::after, .portfolio-style--3 .thumbnail a img, .portfolio-style--3, .portfolio-sacousel-inner .slick-dots li button::after, .rn-slick-dot .slick-dots li button::after, .portfolio-tilthover .portfolio .content, .portfolio-tilthover .portfolio .bg-blr-image, .portfolio .content .inner .portfolio-button, .portfolio .bg-blr-image, .portfolio .thumbnail::after, .portfolio .thumbnail-inner::before, .portfolio, .footer-default .footer-right .footer-widget ul.ft-link li a, ul.social-share li a, .rn-pagination ul.page-list li a::before, a.rn-btn, button.rn-btn, .rn-btn, a.btn-transparent::after, a.btn-transparent, .mainmenunav ul.mainmenu > li > ul.submenu li a, .mainmenunav ul.mainmenu > li > ul.submenu, .mainmenunav ul.mainmenu > li > a, .header-area .header-wrapper a.rn-btn {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.jumbotron {
-    padding: 2rem 1rem;
-    background-color: #efefffe8;
-}
+a {
+    color: #ca3c08;
+    text-decoration: none;
+  }
+  .single-service.service__style--2 .icon {
+    font-size: 54px;
+    font-weight: 400;
+    margin-bottom: 23px;
+    display: inline-flex;
+    color: #f9004d;
+  }
+.pv-tab-button li span::after, .pv-tab-button button span::after, .single-demo a, .related-work .inner h4 a, .blog.blog-style--1 .content .blog-btn, .blog.blog-style--1 .content h4.title a, .blog.blog-style--1 .content::before, .blog.blog-style--1 .content, .blog.blog-style--1 .thumbnail a::after, .blog.blog-style--1 .thumbnail a img, .blog.blog-style--1, .rn-pricing .pricing-table-inner .pricing-footer a.rn-btn, input, textarea, .rn-address .inner p a, .rn-address .icon, ul.nav.tab-style--1 li a::before, ul.nav.tab-style--1 li a, .team .thumbnail::after, .team .thumbnail img, .standard-service .content h3 a, .single-service.service__style--4 .content p, .single-service.service__style--4 .content h3.title, .single-service.service__style--4 .icon, .single-service.service__style--4::before, .single-service.service__style--4, .single-service.service__style--3, .single-service.service__style--2 a::before, .single-service.service__style--2 .content p, .single-service.service__style--2 .content h3.title, .single-service.service__style--2 .icon, .single-service.service__style--2 a, .single-service.service__style--1 .content p, .single-service.service__style--1 .content h3.title, .single-service.service__style--1 .icon, .single-service.service__style--1, .portfolio-style--3 .content .portfolio-btn, .portfolio-style--3 .content h4.title a, .portfolio-style--3 .content::before, .portfolio-style--3 .content, .portfolio-style--3 .thumbnail a::after, .portfolio-style--3 .thumbnail a img, .portfolio-style--3, .portfolio-sacousel-inner .slick-dots li button::after, .rn-slick-dot .slick-dots li button::after, .portfolio-tilthover .portfolio .content, .portfolio-tilthover .portfolio .bg-blr-image, .portfolio .content .inner .portfolio-button, .portfolio .bg-blr-image, .portfolio .thumbnail::after, .portfolio .thumbnail-inner::before, .portfolio, .footer-default .footer-right .footer-widget ul.ft-link li a, ul.social-share li a, .rn-pagination ul.page-list li a::before, a.rn-btn, button.rn-btn, .rn-btn, a.btn-transparent::after, a.btn-transparent, .mainmenunav ul.mainmenu > li > ul.submenu li a, .mainmenunav ul.mainmenu > li > ul.submenu, .mainmenunav ul.mainmenu > li > a, .header-area .header-wrapper a.rn-btn {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}  
+.single-service.service__style--2 .icon svg {
+    stroke-width: 1 !important;
+  }
+  .single-service .icon svg {
+    width: 54px;
+    height: 54px;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  img, svg {
+    vertical-align: middle;
+  }
+  .single-service.service__style--2 .content h3.title {
+    margin-bottom: 19px;
+    font-weight: 500;
+  }
+  h3, .h3 {
+    font-size: 24px;
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.4074;
+    color: #1f1f25;
+  }
+  .rn-section-gap {
+    padding: 120px 0;
+  }
+  .bg_color--1 {
+    background: #fff;
+  }
+  .section-title {
+    margin-top: -20px;
+  }
+  .mb--30 {
+    margin-bottom: 30px !important;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .bg_color--5 {
+    background: #f8f9fc;
+  }
+
+  
