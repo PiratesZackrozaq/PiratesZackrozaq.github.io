@@ -281,7 +281,7 @@ SOFTWARE.
 
         function setStyleCookie() {
             styleCookieVal = $('body').hasClass('active-dark-mode') ? 'dark' : 'light';
-            Cookies.set('styleCookieName', styleCookieVal, { expires: 9999 });
+            Cookies.set('styleCookieName', styleCookieVal, );
             // Cookies.set('styleCookieName', styleCookieVal);
 
         }
